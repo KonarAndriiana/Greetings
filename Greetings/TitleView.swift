@@ -22,9 +22,9 @@ struct TitleView: View {
         AngularGradient(gradient: Gradient(colors: [.pink, .blue , .green]), center: .center, angle: .zero)
     }
     
-    @State private var subttile = "Explore IOS Programming"
+    @State private var subttile: LocalizedStringKey = "Explore IOS Programming"
     
-    let subttitles = [ "Exploring iOS Programming" , "Learning how to bake" , "Programming recipes" , " Exploring SwiftUI"]
+    let subttitles: [LocalizedStringKey] = [ "Exploring iOS Programming" , "Learning how to bake" , "Programming recipes" , "Exploring SwiftUI"]
     
     var body: some View {
         HStack {
@@ -38,7 +38,7 @@ struct TitleView: View {
             }
             .onTapGesture {
                 subttile = subttitles
-                    .randomElement() ?? "Error"
+                    .randomElement() ?? LocalizedStringKey("Error")
             }
             
             Spacer()
