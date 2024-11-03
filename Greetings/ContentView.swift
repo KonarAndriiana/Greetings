@@ -14,6 +14,7 @@ struct ContentView: View {
         .init(text: "Are you ready to , ", color: .yellow),
         .init(text: "start expoliring ?", color: .red),
         .init(text: "Boom.", color: .purple),
+        .init(text: "Let's go !", color: .blue),
         .init(text: "Let's go !", color: .blue)
     ]
     
