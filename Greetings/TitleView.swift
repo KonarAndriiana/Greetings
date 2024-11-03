@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// This is a title view of the app which displayes a title , a subtitle which randomly changes on tap and we have colorful disc which rotates on tap
 struct TitleView: View {
     
     let lineWidth = 15.0
