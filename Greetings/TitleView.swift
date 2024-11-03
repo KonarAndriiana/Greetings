@@ -18,8 +18,12 @@ struct TitleView: View {
     }
     
     var angualarGradient: AngularGradient {
-        AngularGradient(gradient: Gradient(colors: [.red , .green, .pink , .yellow]), center: .center, angle: .zero)
+        AngularGradient(gradient: Gradient(colors: [.pink, .blue , .green]), center: .center, angle: .zero)
     }
+    
+    @State private var subttile = "Explore IOS Programming"
+    
+    let subttitles = [ "Exploring iOS Programming" , "Learning how to bake" , "Programming recipes" , " Exploring SwiftUI"]
     
     var body: some View {
         HStack {
@@ -27,9 +31,13 @@ struct TitleView: View {
                 Text("Greetings")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
-                Text("Explore IOS Programming")
+                Text(subttile)
                     .font(.headline)
                     .fontWeight(.thin)
+            }
+            .onTapGesture {
+                subttile = subttitles
+                    .randomElement() ?? "Error"
             }
             
             Spacer()
