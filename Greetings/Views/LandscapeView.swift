@@ -14,7 +14,7 @@ struct LandscapeView: View {
             BackgroundView()
             
             HStack() {
-                TitleView()
+                VerticalTitleView()
                 
                 Spacer()
                 

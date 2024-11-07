@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct MainView: View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
+    @Environment(\.verticalSizeClass) var verticalSizeClass
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        //Portrait mode
+        if horizontalSizeClass == .compact && verticalSizeClass == .regular {
+            GreetingsView()
+        } else {
+            LandscapeView()
+        }
     }
 }
 

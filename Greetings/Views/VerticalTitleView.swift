@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
+struct VerticalTitleView: View {
     @State private var subtitle: LocalizedStringKey = "Exploring iOS Programming"
     
     var body: some View {
@@ -16,10 +16,12 @@ struct SwiftUIView: View {
             
             
             RotatableCircleView()
-        }
+            
+            Spacer()
+        }.padding(.vertical)
     }
 }
 
 #Preview {
-    SwiftUIView()
+    VerticalTitleView()
 }
