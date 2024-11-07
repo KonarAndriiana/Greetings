@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct GreetingTextView: View {
+    
+    @Binding var subttile: LocalizedStringKey
+    
+    let subttitles: [LocalizedStringKey] = [ "Exploring iOS Programming" , "Learning how to bake" , "Programming recipes" , "Exploring SwiftUI"]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+            VStack(alignment: .leading , spacing: 0){
+                Text("Greetings")
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+                Text(subttile)
+                    .font(.headline)
+                    .fontWeight(.thin)
+            }
+            .onTapGesture {
+                subttile = subttitles
+                    .randomElement() ?? LocalizedStringKey("Error")
+            }
     }
 }
 
 #Preview {
-    GreetingTextView()
+    GreetingTextView(subttile: .constant("Exploring iOS Programming"))
 }

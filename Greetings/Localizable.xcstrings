@@ -86,6 +86,7 @@
       }
     },
     "Explore IOS Programming" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {

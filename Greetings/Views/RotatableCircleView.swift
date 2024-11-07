@@ -8,8 +8,30 @@
 import SwiftUI
 
 struct RotatableCircleView: View {
+    
+    let lineWidth = 15.0
+    let diameter = 70.0
+ 
+    @State private var IsRotated: Bool = false
+    var angle: Angle {
+        IsRotated ? .zero : Angle(degrees: 360)
+    }
+    
+    var angualarGradient: AngularGradient {
+        AngularGradient(gradient: Gradient(colors: [.pink, .blue , .green]), center: .center, angle: .zero)
+    }
+
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Circle()
+                        .strokeBorder(angualarGradient, lineWidth: lineWidth)
+                        .rotationEffect(angle)
+                        .frame(width: diameter, height: diameter)
+                        .onTapGesture {
+                            withAnimation {
+                                IsRotated.toggle()
+                            }
+                        }
     }
 }
 

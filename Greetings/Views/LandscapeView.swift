@@ -13,15 +13,12 @@ struct LandscapeView: View {
             
             BackgroundView()
             
-            VStack(alignment: .leading) {
+            HStack() {
                 TitleView()
                 
                 Spacer()
                 
                 MessagesView()
-                
-                Spacer()
-                Spacer()
             }
             .padding()
         }
